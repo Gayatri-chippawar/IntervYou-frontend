@@ -20,7 +20,7 @@ export default function AdminResultReview() {
 
     const fetchResultDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:5001/api/admin/result/details/${resultId}`, {
+        const res = await axios.get(`https://intervyou.onrender.com/api/admin/result/details/${resultId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -60,7 +60,7 @@ export default function AdminResultReview() {
 
     try {
       await axios.post(
-        `http://localhost:5001/api/admin/result/confirm/${resultId}`,
+        `https://intervyou.onrender.com/api/admin/result/confirm/${resultId}`,
         {
           updatedResponses: responses,
           finalMarks: totalMarks,
