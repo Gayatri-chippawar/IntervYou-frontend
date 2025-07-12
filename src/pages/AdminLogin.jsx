@@ -10,7 +10,7 @@ export default function AdminLogin() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:5001/api/admin/login", { email, password });
+      const res = await axios.post("https://intervyou.onrender.com/api/admin/login", { email, password });
       localStorage.setItem("adminToken", res.data.token);
       setAlert({ message: '✅ Admin login successful!', type: 'success' });
       setTimeout(() => {
