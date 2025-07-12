@@ -15,7 +15,7 @@ export default function UserResultView() {
     console.log('🔐 Token:', token);
 
     api
-      .get(`http://localhost:5001/api/result/my/${id}`, {
+      .get(`https://intervyou.onrender.com/api/result/my/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setResult(res.data))
