@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://intervyou.onrender.com',
+  baseURL: 'https://intervyou.onrender.com/api',
 });
 
 api.interceptors.request.use((config) => {
