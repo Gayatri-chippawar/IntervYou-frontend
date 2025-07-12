@@ -17,13 +17,13 @@ export default function AdminDashboard() {
     const fetchAdminData = async () => {
       try {
         const [docsRes, bookingsRes, resultsRes] = await Promise.all([
-          axios.get('https://intervyou-frontend.onrender.com/api/admin/documents', {
+          axios.get('https://intervyou.onrender.com/api/admin/documents', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('https://intervyou-frontend.onrender.com/api/admin/bookings', {
+          axios.get('https://intervyou.onrender.com/api/admin/bookings', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('https://intervyou-frontend.onrender.com/api/admin/result/pending', {
+          axios.get('https://intervyou.onrender.com/api/admin/result/pending', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);
@@ -44,7 +44,7 @@ export default function AdminDashboard() {
   const updateDocStatus = async (id, status) => {
     try {
       await axios.patch(
-        `https://intervyou-frontend.onrender.com/api/admin/documents/${id}`,
+        `https://intervyou.onrender.com/api/admin/documents/${id}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
   const updateBookingStatus = async (id, status) => {
     try {
       await axios.patch(
-        `https://intervyou-frontend.onrender.com/api/admin/bookings/${id}`,
+        `https://intervyou.onrender.com/api/admin/bookings/${id}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -74,7 +74,7 @@ export default function AdminDashboard() {
   const confirmResult = async (resultId) => {
     try {
       await axios.post(
-        `https://intervyou-frontend.onrender.com/api/admin/result/confirm/${resultId}`,
+        `https://intervyou.onrender.com/api/admin/result/confirm/${resultId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -88,7 +88,7 @@ export default function AdminDashboard() {
 
   const deleteDocument = async (id) => {
     try {
-      await axios.delete(`https://intervyou-frontend.onrender.com/api/admin/documents/${id}`, {
+      await axios.delete(`https://intervyou.onrender.com/api/admin/documents/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDocuments(prev => prev.filter(doc => doc._id !== id));
@@ -101,7 +101,7 @@ export default function AdminDashboard() {
 
   const deleteBooking = async (id) => {
     try {
-      await axios.delete(`https://intervyou-frontend.onrender.com/api/admin/bookings/${id}`, {
+      await axios.delete(`https://intervyou.onrender.com/api/admin/bookings/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBookings(prev => prev.filter(b => b._id !== id));
@@ -114,7 +114,7 @@ export default function AdminDashboard() {
 
   const deleteResult = async (id) => {
     try {
-      await axios.delete(`https://intervyou-frontend.onrender.com/api/admin/result/${id}`, {
+      await axios.delete(`https://intervyou.onrender.com/api/admin/result/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPendingResults(prev => prev.filter(r => r._id !== id));
