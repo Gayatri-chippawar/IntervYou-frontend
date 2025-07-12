@@ -10,7 +10,7 @@ export default function UserResultList() {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const res = await api.get('http://localhost:5001/api/result/my/results');
+        const res = await api.get('https://intervyou.onrender.com/api/result/my/results');
         console.log('✅ Results fetched:', res.data);
         setResults(res.data);
       } catch (err) {
