@@ -28,7 +28,7 @@ export default function VerifyOtpReset() {
     setSuccessMsg('');
     const fullOtp = otp.join('');
     try {
-      await axios.post('http://localhost:5001/api/auth/verify-otp', {
+      await axios.post('https://intervyou.onrender.com/api/auth/verify-otp', {
         userId,
         otp: fullOtp,
       });
