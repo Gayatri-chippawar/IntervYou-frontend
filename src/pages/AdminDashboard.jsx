@@ -245,7 +245,7 @@ export default function AdminDashboard() {
                             className="btn btn-info btn-sm me-2"
                             onClick={() =>
                               window.open(
-                                `http://localhost:5001/api/document/download/${doc.fileId}?token=${token}`,
+                                `https://intervyou.onrender.com/api/document/download/${doc.fileId}?token=${token}`,
                                 '_blank'
                               )
                             }
