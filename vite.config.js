@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import fallback from 'vite-plugin-mpa-fallback'
 
 // https://vite.dev/config/
 export default defineConfig({
