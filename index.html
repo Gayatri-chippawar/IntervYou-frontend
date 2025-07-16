@@ -1,21 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo3.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IntervYou</title>
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&family=Open+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&family=Open+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
+
+    <!-- Preload & load Google Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&family=Open+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&family=Open+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+    />
+
+    <!-- Vite injects CSS here during build -->
+    <!-- <link rel="stylesheet" href="/src/main.css" /> -->
   </head>
   <body>
     <div id="root"></div>
-    <!-- Production script should point to built files -->
-    <% if (process.env.NODE_ENV === 'production') { %>
-      <script src="/static/js/main.[hash].js"></script>
-    <% } else { %>
-      <script type="module" src="/src/main.jsx"></script>
-    <% } %>
+
+    <!-- Vite development: loads your ES module directly.
+         Vite build: rewritten to point at the hashed bundle in /assets/ -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
