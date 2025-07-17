@@ -4,6 +4,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './index.css';
 
 // Initialize AOS
 AOS.init({
